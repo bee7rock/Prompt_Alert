@@ -8,14 +8,20 @@ console.log('Cor escolhida: ' + cor, 'Cor visitante: ' + adivinhar)
 
 let ganhou = false;
 
-if (adivinhar != cor) {
-    alert('É necessário inserir uma cor válida, recomeça.')
-} else {
-    while (!ganhou) {
-        if (adivinhar = cor) {
-            alert('Acertaste!!!')
 
-            ganhou = true;
+while (!ganhou) {
+    for (i = 0; i < cores.length; i++) {
+        if (adivinhar == cores[i]) {
+            ganhou = true
         }
+    }
+
+    if (adivinhar !== cor) {
+        alert('Errou! Tente novamente...')
+
+        adivinhar = prompt('Adivinha a cor em que estou a pensar:')
+        adivinhar = Math.floor(adivinhar)
+    } else {
+        alert('É necessário inserir uma cor válida, recomeça. :/')
     }
 }
